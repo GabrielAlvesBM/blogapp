@@ -7,15 +7,15 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
-require('./config/auth')(passport);
-const db = require('./config/db');
+require('../config/auth')(passport);
+const db = require('../config/db');
 require('dotenv').config();
 
-const admin = require('./routes/admin');
-const users = require('./routes/user');
+const admin = require('../routes/admin');
+const users = require('../routes/user');
 
-require('./models/Post');
-require('./models/Category');
+require('../models/Post');
+require('../models/Category');
 const Post = mongoose.model('posts');
 const Category = mongoose.model('categories');
 
