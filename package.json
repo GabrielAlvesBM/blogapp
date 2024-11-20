@@ -2,10 +2,12 @@
   "name": "blogapp",
   "version": "1.0.0",
   "description": "Um app de blog, para estudo",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./api/index.js"
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "start": "vercel start",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gabriel Alves",
   "license": "ISC",
@@ -21,5 +23,8 @@
     "nodemon": "^3.1.7",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "vercel": "^24.0.0"
   }
 }
