@@ -63,10 +63,6 @@ mongoose.connect(db.mongoURI).then(() => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const viewsPath = path.join(__dirname, 'views');
-app.set('views', viewsPath);
-
-
 // Rotas
 app.get('/', (req, res) => {
   Post.find().populate('category').sort({ date: 'asc' }).then((posts) => {
