@@ -1,0 +1,46 @@
+{{#each errors}}
+
+    <div class="alert alert-danger">{{ text }}</div>
+
+{{/each}}
+
+<div class="card">
+    <div class="card-body">
+        <h3>Nova Postagem:</h3>
+
+        <form action="/admin/posts/new" method="POST">
+            <label for="title">Título: </label>
+            <input type="text" id="title" name="title" placeholder="Título da Postagem" class="form-control" 
+            minlength="1" required>
+
+            <label for="slug">Slug: </label>
+            <input type="text" name="slug" id="slug" placeholder="Slug da Postagem" class="form-control"
+            minlength="1" required>
+
+            <label for="description">Descrição: </label>
+            <input type="text" name="description" id="description" placeholder="Descrição da Postagem" class="form-control"
+            minlength="4" required>
+
+            <label for="content">Conteúdo: </label>
+            <textarea name="content" id="content" class="form-control"
+            minlength="2" required></textarea>
+
+            <label for="category">Categoria: </label>
+            <select name="category" id="category" class="form-control">
+                {{#each category}}
+
+                    <option value="{{ _id }}">{{ name }}</option>
+
+                {{else}}
+
+                    <option value="0">Nenhuma Categoria Regitrada</option>
+
+                {{/each}}
+            </select>
+            <br>
+
+            <button type="submit" class="btn btn-success">Criar Postagem</button>
+        </form>
+    </div>
+    
+</div>
