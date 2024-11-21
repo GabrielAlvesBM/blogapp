@@ -62,6 +62,7 @@ mongoose.connect(db.mongoURI).then(() => {
 })
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, '../views'));
 
 // Rotas
 app.get('/', (req, res) => {
